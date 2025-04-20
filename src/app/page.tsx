@@ -1,103 +1,72 @@
-import Image from "next/image";
+import Image from 'next/image'
+import mainImg from '@/public/homepage.png'
 
-export default function Home() {
+const LandingPage = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <main className="min-h-screen font-sans text-[#4e341e]">
+      {/* Hero Section */}
+      <section className="relative grid min-h-screen grid-cols-8 items-center overflow-hidden">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src={mainImg}
+          alt="Gluten Free Food"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover select-none"
+          quality={100}
+          fill
           priority
+          draggable="false"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="z-10 col-span-3 col-start-5 px-6 md:px-0">
+          <h1 className="text-5xl font-bold sm:text-6xl md:text-7xl">
+            GLUTEN <br /> FREE <br /> FOOD
+          </h1>
+          <p className="mt-6 text-xl sm:text-2xl md:text-3xl">
+            On our way to take care for your plate. We organized every healthy & gluten-free choice, 
+            you just need to decide <span className="font-bold">WHAT DO YOU WANT.</span>
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+
+      {/* Features Section */}
+      <section className="bg-[#f8f5f2] py-24">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <h2 className="text-3xl font-bold sm:text-4xl">Why Choose Us?</h2>
+          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            We provide handpicked, delicious, and certified gluten-free meals that make healthy eating effortless and tasty.
+          </p>
+          <div className="mt-12 grid gap-12 sm:grid-cols-2 md:grid-cols-3">
+            {features.map((feature, index) => (
+              <div key={index} className="rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md transition">
+                <h3 className="text-xl font-semibold">{feature.title}</h3>
+                <p className="mt-2 text-sm text-gray-600">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-[#4e341e] py-20 text-white">
+        <div className="container mx-auto text-center px-6">
+          <h2 className="text-4xl font-bold mb-4">Ready to Start Your Journey?</h2>
+          <p className="text-lg mb-6 max-w-xl mx-auto">
+            Join us today and discover the best gluten-free options tailored to your lifestyle.
+          </p>
+          <button className="rounded-full bg-white text-[#4e341e] px-8 py-3 font-semibold hover:bg-gray-100 transition">
+            Sign Up Now
+          </button>
+        </div>
+      </section>
+    </main>
+  )
 }
+
+const features = [
+  { title: 'Certified Gluten-Free', description: 'All our meals are rigorously tested and certified gluten-free.' },
+  { title: 'Chef-Curated Recipes', description: 'Every dish is created by professional chefs focused on taste and health.' },
+  { title: 'Fast & Fresh Delivery', description: 'Get meals delivered fast and fresh, straight to your doorstep.' },
+  { title: 'Flexible Meal Plans', description: 'Weekly, bi-weekly, or on-demand — choose what works for you.' },
+  { title: '100% Organic Ingredients', description: 'We use only organic, high-quality ingredients in every dish.' },
+  { title: 'Community Support', description: 'Join a community of gluten-free foodies and wellness seekers.' },
+]
+
+export default LandingPage
