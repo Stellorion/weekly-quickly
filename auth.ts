@@ -1,4 +1,4 @@
-import NextAuth, { NextAuthOptions } from 'next-auth/index';
+import NextAuth, { NextAuthOptions } from 'next-auth/';
 import Credentials from 'next-auth/providers/credentials';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import { db } from '@/db/connect';
