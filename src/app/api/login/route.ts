@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { db } from '@/db/connect';
-import { hashFunction, compareFunction } from '@/src/utils/hashFunction';
+import { hashFunction } from '@/src/utils/hashFunction';
 
 export async function POST(req: Request) {
   try {

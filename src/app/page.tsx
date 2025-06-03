@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/src
 import { Badge } from "@/src/components/ui/badge"
 import { Input } from "@/src/components/ui/input"
 import { Star, Clock, Shield, ChefHat, Smartphone, ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 export default function LandingPage() {
   const [email, setEmail] = useState("")
@@ -106,9 +107,11 @@ export default function LandingPage() {
             </div>
             <div className="relative">
               <div className="bg-gradient-to-br from-green-400 to-green-600 rounded-3xl p-8 shadow-2xl">
-                <img
+                <Image
                   src="/homepage.svg"
                   alt="Food delivery app interface"
+                  width={100}
+                  height={100}
                   className="w-full h-auto rounded-2xl shadow-lg"
                 />
               </div>
@@ -215,9 +218,11 @@ export default function LandingPage() {
                   </div>
                   <p className="text-gray-600 mb-4">"{testimonial.text}"</p>
                   <div className="flex items-center gap-3">
-                    <img
+                    <Image
                       src={testimonial.avatar || "/placeholder.svg"}
                       alt={testimonial.name}
+                      width={10}
+                      height={10}
                       className="w-10 h-10 rounded-full"
                     />
                     <span className="font-semibold text-gray-900">{testimonial.name}</span>
