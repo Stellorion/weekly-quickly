@@ -22,7 +22,6 @@ export async function POST(req: NextRequest) {
         fullName,
         email,
         password: hashedPassword,
-        // role is optional, default is USER
       },
     });
 
