@@ -1,5 +1,3 @@
-import NextAuth from 'next-auth';
-
 interface UserBase {
   id: string;
   email: string;
@@ -8,8 +6,6 @@ interface UserBase {
 }
 
 declare module 'next-auth' {
-  interface User extends UserBase {}
-
   interface Session {
     user: UserBase;
   }

@@ -75,7 +75,7 @@ export default function SignupPage() {
 
       // Optionally, redirect or auto-login here
       window.location.href = '/login';
-    } catch (err) {
+    } catch {
       setError('Something went wrong');
     } finally {
       setIsLoading(false);
