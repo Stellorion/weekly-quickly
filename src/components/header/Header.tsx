@@ -12,8 +12,8 @@ const Header = () => {
   const { isOpen, open, close } = useMobileMenuStore();
 
   return (
-    <header className="absolute z-10 w-full bg-transparent">
-      <nav className="mx-auto flex items-center justify-between p-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-300 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <nav className="mx-auto flex items-center justify-between p-4 lg:px-8">
         <Logo />
         <MobileMenuButton onClick={open} />
         <DesktopNavigation />

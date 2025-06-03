@@ -12,6 +12,9 @@ const DesktopNavigation = () => {
       <Link href="#" className="text-sm font-semibold text-[#634329] hover:text-[#4e341e]">
         Contact
       </Link>
+            <Link href="question" className="text-sm font-semibold text-[#634329] hover:text-[#4e341e]">
+        Question
+      </Link>
     </div>
   )
 }
